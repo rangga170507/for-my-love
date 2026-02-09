@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary Sayang! ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink-hot: #ff4d6d;
+            --pink-light: #ffb3c1;
+            --purple-main: #9d4edd;
+            --purple-light: #e0aaff;
+            --bg-gradient: linear-gradient(135deg, #fff0f3 0%, #f3e5f5 100%);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: var(--bg-gradient);
+            color: #590d22;
+            overflow-x: hidden;
+        }
+
+        /* Dekorasi Animasi Hati Melayang */
+        .heart-float {
+            position: fixed;
+            color: var(--pink-hot);
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+            z-index: 0;
+            animation: floatUp 5s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Header Gaya Romantis */
+        header {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
+                        url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 10px solid var(--purple-light);
+            border-bottom-left-radius: 50% 20px;
+            border-bottom-right-radius: 50% 20px;
+            position: relative;
+        }
+
+        h1 { 
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem; 
+            margin-bottom: 10px; 
+            color: var(--pink-hot);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .subtitle { 
+            font-size: 1.4rem; 
+            background: white; 
+            padding: 5px 20px; 
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(157, 78, 221, 0.2);
+        }
+
+        .container { 
+            padding: 50px 20px; 
+            max-width: 800px; 
+            margin: auto; 
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Countdown Style - Lucu & Berwarna */
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            border: 3px dashed var(--purple-light);
+            box-shadow: 10px 10px 0px var(--pink-light);
+            min-width: 80px;
+            transition: transform 0.3s;
+        }
+
+        .time-box:hover { transform: rotate(-5deg); }
+
+        .time-box span { 
+            display: block; 
+            font-size: 2rem; 
+            font-weight: bold; 
+            color: var(--purple-main);
+        }
+
+        /* Gallery dengan Frame Lucu */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 8px solid white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .gallery img:hover { 
+            transform: scale(1.05) rotate(3deg); 
+            border-color: var(--purple-light);
+        }
+
+        /* Pesan Romantis */
+        .message-box {
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            margin-top: 50px;
+            border-left: 10px solid var(--pink-hot);
+            border-right: 10px solid var(--purple-main);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        footer { 
+            padding: 40px; 
+            font-size: 1rem; 
+            background: var(--purple-main); 
+            color: white;
+            margin-top: 50px;
+        }
+
+        /* Hiasan Tambahan */
+        .emoji-float { font-size: 2rem; }
+    </style>
+</head>
+<body>
+
+    <div id="heart-container"></div>
+
+    <header>
+        <h1>Happy Anniversary! <span class="emoji-float">✨</span></h1>
+        <p class="subtitle">"Aku + Kamu = Selamanya 💜"</p>
+    </header>
+
+    <div class="container">
+        <h2 style="color: var(--purple-main);">Sudah Sejauh Ini Kita Melangkah:</h2>
+        
+        <div id="countdown">
+            <div class="time-box"><span id="days">0</span>Hari</div>
+            <div class="time-box"><span id="hours">0</span>Jam</div>
+            <div class="time-box"><span id="minutes">0</span>Menit</div>
+            <div class="time-box"><span id="seconds">0</span>Detik</div>
+        </div>
+
+        <div class="message-box">
+            <h3 style="color: var(--pink-hot); font-size: 1.5rem;">Pesan Cinta Untukmu 💌</h3>
+            <p>Terima kasih sudah sabar menghadapi tingkah lucuku, terima kasih sudah selalu ada. Kamu adalah warna ungu favoritku di antara langit yang merah muda!</p>
+            <p><strong>Mari buat lebih banyak kenangan manis! 🍦</strong></p>
+        </div>
+
+        <h2 style="margin-top: 60px; color: var(--purple-main);">Galeri Bahagia Kita 📸</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1516589174184-c685266d4341?w=400" alt="Foto 1">
+            <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?w=400" alt="Foto 2">
+            <img src="https://images.unsplash.com/photo-1522673607200-1648835ecd1c?w=400" alt="Foto 3">
+        </div>
+    </div>
+
+    <footer>
+        Dibuat dengan penuh ❤️ dan sedikit sihir ✨ oleh [Nama Kamu]
+    </footer>
+
+    <script>
+        // --- LOGIKA COUNTDOWN ---
+        const anniversaryDate = new Date(2024, 1, 14).getTime(); 
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = now - anniversaryDate;
+
+            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000);
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // --- ANIMASI HATI MELAYANG ---
+        function createHeart() {
+            const container = document.getElementById('heart-container');
+            const heart = document.createElement('div');
+            const hearts = ['❤️', '💜', '💖', '✨', '🌸'];
+            
+            heart.classList.add('heart-float');
+            heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            container.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 400); // Munculkan hati setiap 0.4 detik
+    </script>
+</body>
+</html>
